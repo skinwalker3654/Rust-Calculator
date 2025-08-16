@@ -5,7 +5,7 @@ fn add(a: f32,b: f32) -> f32 {a+b}
 fn sub(a: f32,b: f32) -> f32 {a-b}
 fn mul(a: f32,b: f32) -> f32 {a*b}
 fn div(a: f32,b: f32) -> f32 {
-    if b == 0 {println!("Error: Division by 0!"); process::exit(1);}
+    if b == 0.0 {println!("Error: Division by 0!"); process::exit(1);}
     else {a/b}
 }
 
