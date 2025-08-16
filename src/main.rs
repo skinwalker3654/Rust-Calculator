@@ -14,10 +14,10 @@ fn main() {
     let mut number1 = String::new();
     let mut number2 = String::new();
 
-    println!("1. Add");
-    println!("2. Sub");
-    println!("3. Mul");
-    println!("4. Div");
+    println!("1. Addition");
+    println!("2. Subtraction");
+    println!("3. Multiplication");
+    println!("4. Division");
 
     print!("\nPick one: ");
     io::stdout().flush().unwrap();
