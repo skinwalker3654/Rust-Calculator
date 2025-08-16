@@ -8,7 +8,7 @@
 ## Build and Run
 1. compile the program
     ```bash
-    rustc main.rs
+    rustc src/main.rs
     ```
 2. run the program
     ```bash
