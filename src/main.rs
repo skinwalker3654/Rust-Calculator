@@ -5,14 +5,31 @@ fn add(a: f32,b: f32) -> f32 {a+b}
 fn sub(a: f32,b: f32) -> f32 {a-b}
 fn mul(a: f32,b: f32) -> f32 {a*b}
 fn div(a: f32,b: f32) -> f32 {
-    if b == 0.0 {println!("Error: Division by 0!"); process::exit(1);}
+    if b == 0.0 {
+        println!("Error: Division by 0!");
+        process::exit(1);
+    }
     else {a/b}
+}
+
+fn read_input(prompt: &str) -> f32 {
+    let mut input = String::new();
+
+    print!("{}",prompt);
+    io::stdout().flush().unwrap();
+    io::stdin().read_line(&mut input).unwrap();
+
+    match input.trim().parse::<f32>() {
+        Ok(num) => num,
+        Err(_) => {
+            println!("Error: Invalid input");
+            process::exit(1);
+        }
+    }
 }
 
 fn main() {
     let mut choise = String::new();
-    let mut number1 = String::new();
-    let mut number2 = String::new();
 
     println!("1. Addition");
     println!("2. Subtraction");
@@ -21,23 +38,23 @@ fn main() {
 
     print!("\nPick one: ");
     io::stdout().flush().unwrap();
-    io::stdin().read_line(&mut choise).expect("Input failure");
-    let option: i32 = choise.trim().parse().expect("Invalid number");
+    io::stdin().read_line(&mut choise).unwrap();
+    
+    let option: i32 = match choise.trim().parse::<i32>() {
+        Ok(num) => num,
+        Err(_) => {
+            println!("Error: Invalid input");
+            process::exit(1);
+        }
+    };
 
     if option < 1 || option > 4 {
-        println!("Invalid choise");
+        println!("Error: Invalid choise");
         process::exit(1);
     }
 
-    print!("Enter 1st number: ");
-    io::stdout().flush().unwrap();
-    io::stdin().read_line(&mut number1).expect("Error: Input failure");
-    let num1: f32 = number1.trim().parse().expect("Error: Invalid input");
-
-    print!("Enter 2nd number: ");
-    io::stdout().flush().unwrap();
-    io::stdin().read_line(&mut number2).expect("Error: Input failure");
-    let num2: f32 = number2.trim().parse().expect("Error: Invalid input");
+    let num1 = read_input("Enter the 1st number: ");
+    let num2 = read_input("Enter the 2nd number: ");
 
     match option {
         1 => println!("{} + {} = {}",num1,num2,add(num1,num2)),
