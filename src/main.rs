@@ -6,7 +6,7 @@ fn sub(a: f32,b: f32) -> f32 {a-b}
 fn mul(a: f32,b: f32) -> f32 {a*b}
 fn div(a: f32,b: f32) -> f32 {
     if b == 0.0 {
-        println!("Error: Division by 0!");
+        println!("\nError: Division by 0!");
         process::exit(1);
     }
     else {a/b}
@@ -53,14 +53,15 @@ fn main() {
         process::exit(1);
     }
 
+    println!("");
     let num1 = read_input("Enter the 1st number: ");
     let num2 = read_input("Enter the 2nd number: ");
 
     match option {
-        1 => println!("{} + {} = {}",num1,num2,add(num1,num2)),
-        2 => println!("{} - {} = {}",num1,num2,sub(num1,num2)),
-        3 => println!("{} * {} = {}",num1,num2,mul(num1,num2)),
-        4 => println!("{} / {} = {}",num1,num2,div(num1,num2)),
-        _ => println!("Something went wrong"),
+        1 => println!("\n{} + {} = {}",num1,num2,add(num1,num2)),
+        2 => println!("\n{} - {} = {}",num1,num2,sub(num1,num2)),
+        3 => println!("\n{} * {} = {}",num1,num2,mul(num1,num2)),
+        4 => println!("\n{} / {} = {}",num1,num2,div(num1,num2)),
+        _ => println!("\nSomething went wrong"),
     }
 }
