@@ -19,7 +19,7 @@ fn main() {
     println!("3. Mul");
     println!("4. Div");
 
-    print!("\nPick one> ");
+    print!("\nPick one: ");
     io::stdout().flush().unwrap();
     io::stdin().read_line(&mut choise).expect("Input failure");
     let option: i32 = choise.trim().parse().expect("Invalid number");
