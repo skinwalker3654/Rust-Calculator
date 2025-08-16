@@ -4,7 +4,10 @@ use std::process;
 fn add(a: f32,b: f32) -> f32 {a+b}
 fn sub(a: f32,b: f32) -> f32 {a-b}
 fn mul(a: f32,b: f32) -> f32 {a*b}
-fn div(a: f32,b: f32) -> f32 {a/b}
+fn div(a: f32,b: f32) -> f32 {
+    if b == 0 {println!("Error: Division by 0!"); process::exit(1);}
+    else {a/b}
+}
 
 fn main() {
     let mut choise = String::new();
@@ -28,13 +31,13 @@ fn main() {
 
     print!("Enter 1st number: ");
     io::stdout().flush().unwrap();
-    io::stdin().read_line(&mut number1).expect("Input failure");
-    let num1: f32 = number1.trim().parse().expect("Invalid number");
+    io::stdin().read_line(&mut number1).expect("Error: Input failure");
+    let num1: f32 = number1.trim().parse().expect("Error: Invalid input");
 
     print!("Enter 2nd number: ");
     io::stdout().flush().unwrap();
-    io::stdin().read_line(&mut number2).expect("Input failure");
-    let num2: f32 = number2.trim().parse().expect("Invalid number");
+    io::stdin().read_line(&mut number2).expect("Error: Input failure");
+    let num2: f32 = number2.trim().parse().expect("Error: Invalid input");
 
     match option {
         1 => println!("{} + {} = {}",num1,num2,add(num1,num2)),
