@@ -1,7 +1,6 @@
 ### Simple Calculator on Rust
 
-## Nothing really special 
-## just practising the Rust laguage
+## Nothing really special just practising the Rust laguage
 
 --- 
 
