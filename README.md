@@ -1,7 +1,12 @@
-### Simple Calculator on Rust
+# Rust Calculator
 
-# Nothing really special just practising the Rust laguage
-
+# Its not something special just a basic rust calculator
+# FEATURES:
+- `additoin`
+- `subtraction`
+- `multiplication`
+- `division`
+- 
 --- 
 
 ## Build and Run
@@ -13,4 +18,4 @@
     ```bash
     ./main
     ```
-# Rust-Calculator
+
