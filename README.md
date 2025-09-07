@@ -1,12 +1,14 @@
 # Rust Calculator
+## Its nothing special just a basic rust calculator
 
-# Its not something special just a basic rust calculator
-# FEATURES:
+---
+
+## FEATURES:
 - `additoin`
 - `subtraction`
 - `multiplication`
 - `division`
-- 
+
 --- 
 
 ## Build and Run
@@ -18,4 +20,3 @@
     ```bash
     ./main
     ```
-
