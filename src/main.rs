@@ -29,7 +29,7 @@ fn read_input(prompt: &str) -> f32 {
 }
 
 fn main() {
-    let mut choise = String::new();
+    let mut choice = String::new();
 
     println!("1. Addition");
     println!("2. Subtraction");
@@ -38,9 +38,9 @@ fn main() {
 
     print!("\nPick one: ");
     io::stdout().flush().unwrap();
-    io::stdin().read_line(&mut choise).unwrap();
+    io::stdin().read_line(&mut choice).unwrap();
     
-    let option: i32 = match choise.trim().parse::<i32>() {
+    let option: i32 = match choice.trim().parse::<i32>() {
         Ok(num) => num,
         Err(_) => {
             println!("Error: Invalid input");
